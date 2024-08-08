@@ -75,7 +75,9 @@
         <pagination :pages="pagination" @emit-pages="renderProducts"></pagination>
         <!-- 購物車列表 -->
         <div class="text-end">
-          <button class="btn btn-outline-danger" type="button" @click="delAll" :disabled="loadingStatus.loadingItem !== ''">清空購物車</button>
+          <button class="btn btn-outline-danger" type="button" @click="delAll" :disabled="loadingStatus.loadingItem !== ''">清空購物車
+            <span class="badge rounded-pill bg-primary">{{cart.carts.length}}</span>
+          </button>
         </div>
         <table class="table align-middle">
           <thead>

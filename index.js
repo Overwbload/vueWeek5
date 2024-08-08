@@ -27,7 +27,9 @@ const app = createApp({
       products: [], //產品內容
       productDetail: {},
       pagination: {}, //分頁
-      cart: {}, //購物車
+      cart: {
+        carts:[]
+      }, //購物車
       loadingStatus: {
         loadingItem: '',
       },
@@ -91,6 +93,7 @@ const app = createApp({
       axios.get(`${this.url}/api/${this.path}/cart`)
         .then(res => {
           this.cart = res.data.data;
+          console.log(this.cart);
         })
         .catch(err => {
           alert(err.response.data.message);
